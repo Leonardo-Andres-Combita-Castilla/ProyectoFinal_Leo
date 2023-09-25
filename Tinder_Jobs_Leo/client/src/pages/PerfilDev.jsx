@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import ComponentePerfilDev from '../Components/ComponentePerfilDev';
-import DevMatch from '../Components/ComponenteMatchDev';
+import ComponentePerfilDev from '../Components/DevComponents/ComponentePerfilDev';
+import DevMatch from '../Components/DevComponents/ComponenteMatchDev';
 
 const PerfilDev = () => {
   const { id } = useParams();
