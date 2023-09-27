@@ -17,7 +17,7 @@ const CompanyMatch = ({ id }) => {
           .catch((error) => console.error('Error:', error));
       };
 
-    return(
+    return (
         <div>
             <button onClick={handleBusquedaClick}>Búsqueda</button>
             {match && (
@@ -25,17 +25,23 @@ const CompanyMatch = ({ id }) => {
                     <h2>!! Devs que te buscan !!</h2>
                     {match.devs.map((dev, index) => (
                         <div key={index}>
-                            {/* <h3>Empresa {index + 1}</h3> */}
-                            <p>Nombre: {dev.nombres}</p>
+                            <p>Nombre: {dev.nombres} {dev.apellidos}</p>
+                            <p>Telefono: {dev.telefono} </p>
                             <p>Email: {dev.email}</p>
-                            <h4>Ofertas de Empleo:</h4>
+                            <p>Rol:{dev.rol}</p>
+                            <p>Experiencia:{dev.experiencia}</p>
+                            <h4>Habilidades:</h4>
+                            <ul>
+                                {dev.habilidades.map((habilidad, index) => (
+                                    <li key={index}>{habilidad.nombre}</li>
+                                ))}
+                            </ul>
                         </div>
-                ))}
+                    ))}
+                </div>
+            )}
         </div>
-      )}
-    </div>
-    )
+    );
+};
 
-}
-
-export default CompanyMatch
+export default CompanyMatch;

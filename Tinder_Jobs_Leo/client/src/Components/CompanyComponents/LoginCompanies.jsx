@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import RegisterCompany from './RegisterCompanies';
+
 const LoginCompanies = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -46,6 +48,7 @@ const LoginCompanies = () => {
       }, [loggedIn, id]);
 
     return (
+      <>
         <div>
         <h2>Iniciar Sesión</h2>
         <form onSubmit={handleSubmit}>
@@ -73,6 +76,13 @@ const LoginCompanies = () => {
             {errorMessage && <p>{errorMessage}</p>}
         </form>
         </div>
+
+        <div>
+          <RegisterCompany/>
+        </div>
+
+
+        </>
   );
 }   
 
